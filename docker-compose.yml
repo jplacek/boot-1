@@ -1,6 +1,7 @@
 discovery:
   image: jplacek/test-maven
   net: host
+
   
 simple-client:
   image: jplacek/simple-client
