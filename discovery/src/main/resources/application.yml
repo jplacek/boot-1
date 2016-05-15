@@ -6,7 +6,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
   instance:
-    hostname: 192.168.99.101
+    hostname: ${EUREKA_INSTANCE_IPADDRESS}
     nonSecurePort: 8761
 
 logging:

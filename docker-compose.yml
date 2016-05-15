@@ -1,10 +1,13 @@
 discovery:
   image: jplacek/test-maven
   net: host
+  environment:
+    EUREKA_INSTANCE_IPADDRESS: 192.168.99.100
+    SPRING_PROFILES_ACTIVE: docker
   
 simple-client:
   image: jplacek/simple-client
   net: host
   environment:
-    EUREKA_INSTANCE_IPADDRESS: 192.168.99.101
+    EUREKA_INSTANCE_IPADDRESS: 192.168.99.100
     SPRING_PROFILES_ACTIVE: docker
