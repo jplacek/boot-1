@@ -1,5 +1,7 @@
 package com.jared;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,8 +28,15 @@ class SimpleController {
 	@Autowired
 	LoadBalancerClient loadBalancer;
 	
+	private static final Logger logger = LoggerFactory.getLogger(SimpleController.class);
+
+	
 	@RequestMapping("/")
 	public @ResponseBody String index() {
+		logger.error("this is a test2");
+		
+		System.out.println("ok we are testing");
+		
 		return "hello from simple-client";
 	}
 	
@@ -38,6 +47,8 @@ class SimpleController {
 		RestTemplate restTemplate = new RestTemplate();
 		
 		String response = restTemplate.getForEntity(instance.getUri(), String.class).getBody();
+		
+		logger.debug("this is a test");
 		
 		return "response from: "+appName+", on: "+instance.getUri()+", response: "+response;
 	}
