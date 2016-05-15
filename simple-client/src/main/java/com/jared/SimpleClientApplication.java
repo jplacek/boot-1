@@ -33,9 +33,7 @@ class SimpleController {
 	
 	@RequestMapping("/")
 	public @ResponseBody String index() {
-		logger.error("this is a test2");
-		
-		System.out.println("ok we are testing");
+		logger.debug("this is a test2");
 		
 		return "hello from simple-client";
 	}

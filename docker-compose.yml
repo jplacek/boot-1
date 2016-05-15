@@ -3,6 +3,7 @@ discovery:
   net: host
   environment:
     EUREKA_INSTANCE_IPADDRESS: 192.168.99.100
+    LOGSTASH_HOST_IP: 192.168.99.100
     SPRING_PROFILES_ACTIVE: docker
   
 simple-client:
@@ -10,4 +11,5 @@ simple-client:
   net: host
   environment:
     EUREKA_INSTANCE_IPADDRESS: 192.168.99.100
+    LOGSTASH_HOST_IP: 192.168.99.100
     SPRING_PROFILES_ACTIVE: docker
